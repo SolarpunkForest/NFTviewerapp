@@ -1,0 +1,49 @@
+.nftCard {
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px;
+    box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
+}
+
+.nftTitle {
+    color: #333;
+    font-size: 1.5em;
+    margin-bottom: 15px;
+}
+
+.nftImage {
+    width: 10%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    cursor: pointer;
+}
+
+.nftDescription {
+    color: #666;
+}
+
+.nftCoreAttributes {
+    /* Styling for core attributes section */
+    margin-bottom: 30px;
+}
+
+.nftAdditionalAttributes {
+    /* Styling for additional attributes section */
+    background-color: #f5f5f5;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.nftInput {
+    width: 100%; /* or any specific width you prefer */
+    padding: 8px;
+    margin: 10px 0;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+
+/* Add more styles for other elements */
