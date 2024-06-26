@@ -8,8 +8,8 @@ const NFTViewer = ({ alchemyUrl }) => {
     const [nftData, setNftData] = useState(null);
     const [totalSupply, setTotalSupply] = useState('');
     const [inputValue, setInputValue] = useState('');
-    const contractAddress = '0x8E62A20f537340073e0f7342043dd5Cc2180c273';
-    const co2TokenAddress = '0x497DC0828A5595176cA4818231012258682c7e84';
+    const contractAddress = '0x18AcafB6D7df58CB9761786A50Ac279d82c9c974'; // Updated NFT contract address
+    const co2TokenAddress = '0x7f0fea0AD75cb20DD2AFEc833068C66D3acC7EAD'; // Updated CO2 token contract address
 
     const fetchNFTData = async (tokenId) => {
         const web3 = new Web3(alchemyUrl);
