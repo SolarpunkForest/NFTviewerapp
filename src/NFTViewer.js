@@ -60,7 +60,7 @@ const NFTViewer = ({ alchemyUrl }) => {
                     <img src={nftData.image} alt={nftData.name} className={styles.nftImage} />
                     <p className={styles.nftDescription}>{nftData.description}</p>
                     <p>Size in Hectares= {nftData.size}</p>
-                    <p>CO2 per Hectare= {nftData.co2PerHectare}</p>
+                    <p>CO2/Tones per Hectare= {nftData.co2PerHectare}</p>
                     <p>Total CO2 Token Supply= {totalSupply}</p>
                     <div className={styles.nftAdditionalAttributes}>
                         <h3>Asset underlying attributes:</h3>
