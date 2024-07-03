@@ -1,20 +1,17 @@
 import React, { useState } from 'react';
-import contractABI from './ForestNFTABI.json';
-import co2TokenABI from './CO2TokenABI.json';
+import config from './config';
 import styles from './NFTViewer.module.css';
 import Web3 from 'web3';
 
-const NFTViewer = ({ alchemyUrl }) => {
+const NFTViewer = () => {
     const [nftData, setNftData] = useState(null);
     const [totalSupply, setTotalSupply] = useState('');
     const [inputValue, setInputValue] = useState('');
-    const contractAddress = '0x18AcafB6D7df58CB9761786A50Ac279d82c9c974'; // Updated NFT contract address
-    const co2TokenAddress = '0x7f0fea0AD75cb20DD2AFEc833068C66D3acC7EAD'; // Updated CO2 token contract address
 
     const fetchNFTData = async (tokenId) => {
-        const web3 = new Web3(alchemyUrl);
-        const nftContract = new web3.eth.Contract(contractABI, contractAddress);
-        const co2TokenContract = new web3.eth.Contract(co2TokenABI, co2TokenAddress);
+        const web3 = new Web3(config.alchemyUrl);
+        const nftContract = new web3.eth.Contract(config.forestNFTABI, config.contractAddress);
+        const co2TokenContract = new web3.eth.Contract(config.co2TokenABI, config.co2TokenAddress);
 
         try {
             const tokenURI = await nftContract.methods.tokenURI(tokenId).call();
@@ -69,6 +66,11 @@ const NFTViewer = ({ alchemyUrl }) => {
                         <p><a href={nftData.soilStudies} target="_blank" rel="noopener noreferrer">Soil Studies</a></p>
                         <p><a href={nftData.ownershipTitle} target="_blank" rel="noopener noreferrer">Ownership Title</a></p>
                         <p><a href={nftData.CO2CapCalculation} target="_blank" rel="noopener noreferrer">CO2 Capacity Calculation</a></p>
+                        <p>Geolocation Hash: {nftData.geoLocationHash}</p>
+                        <p>Topographic Plan Hash: {nftData.topographicPlanHash}</p>
+                        <p>Soil Studies Hash: {nftData.soilStudiesHash}</p>
+                        <p>Ownership Title Hash: {nftData.ownershipTitleHash}</p>
+                        <p>CO2 Capacity Calculation Hash: {nftData.CO2CapCalculationHash}</p>
                     </div>
                 </div>
             )}
