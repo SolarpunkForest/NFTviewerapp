@@ -1,5 +1,11 @@
 import React, { useState } from 'react';
-import config from './config';
+import {
+    NFT_CONTRACT_ADDRESS,
+    CO2_TOKEN_ADDRESS,
+    NFT_ABI,
+    CO2_TOKEN_ABI,
+    ALCHEMY_URL
+} from './config';
 import styles from './NFTViewer.module.css';
 import Web3 from 'web3';
 
@@ -9,9 +15,9 @@ const NFTViewer = () => {
     const [inputValue, setInputValue] = useState('');
 
     const fetchNFTData = async (tokenId) => {
-        const web3 = new Web3(config.alchemyUrl);
-        const nftContract = new web3.eth.Contract(config.forestNFTABI, config.contractAddress);
-        const co2TokenContract = new web3.eth.Contract(config.co2TokenABI, config.co2TokenAddress);
+        const web3 = new Web3(ALCHEMY_URL);
+        const nftContract = new web3.eth.Contract(NFT_ABI, NFT_CONTRACT_ADDRESS);
+        const co2TokenContract = new web3.eth.Contract(CO2_TOKEN_ABI, CO2_TOKEN_ADDRESS);
 
         try {
             const tokenURI = await nftContract.methods.tokenURI(tokenId).call();
