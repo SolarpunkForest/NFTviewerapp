@@ -90,23 +90,23 @@ const NFTViewer = () => {
                     <div className={styles.nftAdditionalAttributes}>
                         <h3>Asset Underlying Attributes:</h3>
                         <div className={styles.attributeGroup}>
-                            <p><strong>Geolocation:</strong> <a href={nftData.geolocation} target="_blank" rel="noopener noreferrer">Link</a></p>
+                            <p><strong>Geolocation:</strong> <a href={nftData.geolocation} target="_blank" rel="noopener noreferrer">Document</a></p>
                             <p>Hash: {nftData.geoLocationHash}</p>
                         </div>
                         <div className={styles.attributeGroup}>
-                            <p><strong>Topographic Plan:</strong> <a href={nftData.topographicPlan} target="_blank" rel="noopener noreferrer">Link</a></p>
+                            <p><strong>Topographic Plan:</strong> <a href={nftData.topographicPlan} target="_blank" rel="noopener noreferrer">Document</a></p>
                             <p>Hash: {nftData.topographicPlanHash}</p>
                         </div>
                         <div className={styles.attributeGroup}>
-                            <p><strong>Soil Studies:</strong> <a href={nftData.soilStudies} target="_blank" rel="noopener noreferrer">Link</a></p>
+                            <p><strong>Soil Studies:</strong> <a href={nftData.soilStudies} target="_blank" rel="noopener noreferrer">Document</a></p>
                             <p>Hash: {nftData.soilStudiesHash}</p>
                         </div>
                         <div className={styles.attributeGroup}>
-                            <p><strong>Ownership Title:</strong> <a href={nftData.ownershipTitle} target="_blank" rel="noopener noreferrer">Link</a></p>
+                            <p><strong>Ownership Title:</strong> <a href={nftData.ownershipTitle} target="_blank" rel="noopener noreferrer">Document</a></p>
                             <p>Hash: {nftData.ownershipTitleHash}</p>
                         </div>
                         <div className={styles.attributeGroup}>
-                            <p><strong>CO2 Capacity Calculation:</strong> <a href={nftData.CO2CapCalculation} target="_blank" rel="noopener noreferrer">Link</a></p>
+                            <p><strong>CO2 Capacity Calculation:</strong> <a href={nftData.CO2CapCalculation} target="_blank" rel="noopener noreferrer">Document</a></p>
                             <p>Hash: {nftData.CO2CapCalculationHash}</p>
                         </div>
                     </div>
