@@ -31,7 +31,12 @@ const NFTViewer = () => {
                 ...metadata, 
                 ...forestData,
                 size: forestData.size.toString(),
-                co2PerHectare: forestData.co2PerHectare.toString()
+                co2PerHectare: forestData.co2PerHectare.toString(),
+                geoLocationHash: forestData.geoLocationHash,
+                topographicPlanHash: forestData.topographicPlanHash,
+                soilStudiesHash: forestData.soilStudiesHash,
+                ownershipTitleHash: forestData.ownershipTitleHash,
+                CO2CapCalculationHash: forestData.CO2CapCalculationHash
             });
             setTotalSupply(Web3.utils.fromWei(supply, 'ether'));
 
