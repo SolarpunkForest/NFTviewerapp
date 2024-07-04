@@ -82,12 +82,23 @@
 }
 
 .nftCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     border: 1px solid #ccc;
     border-radius: 10px;
     padding: 20px;
-    max-width: 600px;
+    max-width: 800px;
     width: 100%;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.nftInfo {
+    background-color: #e0f5e0;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    width: 100%;
 }
 
 .nftTitle {
@@ -99,6 +110,7 @@
     max-width: 100%;
     height: auto;
     margin-bottom: 10px;
+    width: 120%; /* Increased size by 20% */
 }
 
 .nftDescription {
@@ -108,10 +120,14 @@
 
 .nftAdditionalAttributes {
     margin-top: 20px;
+    width: 100%;
 }
 
 .attributeGroup {
     margin-bottom: 15px;
+    background-color: #f9f9f9;
+    padding: 10px;
+    border-radius: 10px;
 }
 
 .attributeGroup p {
