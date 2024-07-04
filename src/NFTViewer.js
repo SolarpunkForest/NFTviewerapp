@@ -18,21 +18,13 @@ const NFTViewer = () => {
         const web3 = new Web3(ALCHEMY_URL);
 
         try {
-            // Load the ABI file dynamically based on the contract address
-            const response = await fetch(`/path-to-your-abi/${contractAddress}.json`);
-            if (!response.ok) {
-                throw new Error(`Could not load ABI for address: ${contractAddress}`);
-            }
-            const nftAbi = await response.json();
-            const nftContract = new web3.eth.Contract(nftAbi, contractAddress);
+            const nftAbi = await import('./ForestNFTABI.json');
+            const nftContract = new web3.eth.Contract(nftAbi.default, contractAddress);
             const co2TokenContract = new web3.eth.Contract(CO2_TOKEN_ABI, CO2_TOKEN_ADDRESS);
 
             const tokenURI = await nftContract.methods.tokenURI(tokenId).call();
-            const tokenResponse = await fetch(tokenURI);
-            if (!tokenResponse.ok) {
-                throw new Error(`Could not fetch metadata for token ID: ${tokenId}`);
-            }
-            const metadata = await tokenResponse.json();
+            const response = await fetch(tokenURI);
+            const metadata = await response.json();
 
             const forestData = await nftContract.methods.forests(tokenId).call();
             const supply = await co2TokenContract.methods.totalSupply().call();
@@ -53,7 +45,7 @@ const NFTViewer = () => {
 
         } catch (error) {
             console.error('Error fetching NFT data:', error);
-            setError(error.message);
+            setError('Error fetching NFT data. Make sure the contract address and token ID are correct.');
         }
     };
 
