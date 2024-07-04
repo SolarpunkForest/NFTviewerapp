@@ -45,5 +45,61 @@
     border-radius: 4px;
 }
 
+/* NFTViewer.module.css */
 
-/* Add more styles for other elements */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.input {
+    margin-bottom: 10px;
+}
+
+.button {
+    margin-bottom: 20px;
+}
+
+.nftCard {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    max-width: 600px;
+    width: 100%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.nftTitle {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.nftImage {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.nftDescription {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.nftAdditionalAttributes {
+    margin-top: 20px;
+}
+
+.attributeGroup {
+    margin-bottom: 15px;
+}
+
+.attributeGroup p {
+    margin: 0;
+}
+
+.attributeGroup strong {
+    display: block;
+    margin-bottom: 5px;
+}

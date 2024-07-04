@@ -67,21 +67,31 @@ const NFTViewer = () => {
                     <h2 className={styles.nftTitle}>{nftData.name}</h2>
                     <img src={nftData.image} alt={nftData.name} className={styles.nftImage} />
                     <p className={styles.nftDescription}>{nftData.description}</p>
-                    <p>Size in Hectares= {nftData.size}</p>
-                    <p>CO2/Tones per Hectare= {nftData.co2PerHectare}</p>
-                    <p>Total CO2 Token Supply= {totalSupply}</p>
+                    <p>Size in Hectares: {nftData.size}</p>
+                    <p>CO2/Tones per Hectare: {nftData.co2PerHectare}</p>
+                    <p>Total CO2 Token Supply: {totalSupply}</p>
                     <div className={styles.nftAdditionalAttributes}>
-                        <h3>Asset underlying attributes:</h3>
-                        <p><a href={nftData.geolocation} target="_blank" rel="noopener noreferrer">Geolocation</a></p>
-                        <p><a href={nftData.topographicPlan} target="_blank" rel="noopener noreferrer">Topographic Plan</a></p>
-                        <p><a href={nftData.soilStudies} target="_blank" rel="noopener noreferrer">Soil Studies</a></p>
-                        <p><a href={nftData.ownershipTitle} target="_blank" rel="noopener noreferrer">Ownership Title</a></p>
-                        <p><a href={nftData.CO2CapCalculation} target="_blank" rel="noopener noreferrer">CO2 Capacity Calculation</a></p>
-                        <p>Geolocation Hash: {nftData.geoLocationHash}</p>
-                        <p>Topographic Plan Hash: {nftData.topographicPlanHash}</p>
-                        <p>Soil Studies Hash: {nftData.soilStudiesHash}</p>
-                        <p>Ownership Title Hash: {nftData.ownershipTitleHash}</p>
-                        <p>CO2 Capacity Calculation Hash: {nftData.CO2CapCalculationHash}</p>
+                        <h3>Asset Underlying Attributes:</h3>
+                        <div className={styles.attributeGroup}>
+                            <p><strong>Geolocation:</strong> <a href={nftData.geolocation} target="_blank" rel="noopener noreferrer">Link</a></p>
+                            <p>Hash: {nftData.geoLocationHash}</p>
+                        </div>
+                        <div className={styles.attributeGroup}>
+                            <p><strong>Topographic Plan:</strong> <a href={nftData.topographicPlan} target="_blank" rel="noopener noreferrer">Link</a></p>
+                            <p>Hash: {nftData.topographicPlanHash}</p>
+                        </div>
+                        <div className={styles.attributeGroup}>
+                            <p><strong>Soil Studies:</strong> <a href={nftData.soilStudies} target="_blank" rel="noopener noreferrer">Link</a></p>
+                            <p>Hash: {nftData.soilStudiesHash}</p>
+                        </div>
+                        <div className={styles.attributeGroup}>
+                            <p><strong>Ownership Title:</strong> <a href={nftData.ownershipTitle} target="_blank" rel="noopener noreferrer">Link</a></p>
+                            <p>Hash: {nftData.ownershipTitleHash}</p>
+                        </div>
+                        <div className={styles.attributeGroup}>
+                            <p><strong>CO2 Capacity Calculation:</strong> <a href={nftData.CO2CapCalculation} target="_blank" rel="noopener noreferrer">Link</a></p>
+                            <p>Hash: {nftData.CO2CapCalculationHash}</p>
+                        </div>
                     </div>
                 </div>
             )}
