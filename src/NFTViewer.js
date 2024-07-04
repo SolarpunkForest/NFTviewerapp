@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import {
+    NFT_CONTRACT_ADDRESS,
     CO2_TOKEN_ADDRESS,
+    NFT_ABI,
     CO2_TOKEN_ABI,
     ALCHEMY_URL
 } from './config';
@@ -10,13 +12,11 @@ import Web3 from 'web3';
 const NFTViewer = () => {
     const [nftData, setNftData] = useState(null);
     const [totalSupply, setTotalSupply] = useState('');
-    const [tokenID, setTokenID] = useState('');
-    const [contractAddress, setContractAddress] = useState('');
+    const [inputValue, setInputValue] = useState('');
 
-    const fetchNFTData = async (contractAddress, tokenId) => {
+    const fetchNFTData = async (tokenId) => {
         const web3 = new Web3(ALCHEMY_URL);
-        const nftAbi = await fetch(`/path-to-your-abi/${contractAddress}.json`).then(res => res.json());
-        const nftContract = new web3.eth.Contract(nftAbi, contractAddress);
+        const nftContract = new web3.eth.Contract(NFT_ABI, NFT_CONTRACT_ADDRESS);
         const co2TokenContract = new web3.eth.Contract(CO2_TOKEN_ABI, CO2_TOKEN_ADDRESS);
 
         try {
@@ -45,35 +45,23 @@ const NFTViewer = () => {
         }
     };
 
-    const handleTokenIDChange = (e) => {
-        setTokenID(e.target.value);
-    };
-
-    const handleContractAddressChange = (e) => {
-        setContractAddress(e.target.value);
+    const handleInputChange = (e) => {
+        setInputValue(e.target.value);
     };
 
     const handleSubmit = () => {
-        fetchNFTData(contractAddress, tokenID);
+        fetchNFTData(inputValue);
     };
 
     return (
         <div className={styles.container}>
             <input
                 type="text"
-                value={contractAddress}
-                onChange={handleContractAddressChange}
-                placeholder="Enter NFT Contract Address"
-                className={styles.input}
-            />
-            <input
-                type="text"
-                value={tokenID}
-                onChange={handleTokenIDChange}
+                value={inputValue}
+                onChange={handleInputChange}
                 placeholder="Enter NFT Token ID"
-                className={styles.input}
             />
-            <button onClick={handleSubmit} className={styles.button}>Fetch NFT Data</button>
+            <button onClick={handleSubmit}>Fetch NFT Data</button>
             {nftData && (
                 <div className={styles.nftCard}>
                     <h2 className={styles.nftTitle}>{nftData.name}</h2>
