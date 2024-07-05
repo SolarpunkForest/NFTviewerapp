@@ -104,7 +104,7 @@
     background-color: #e0f5e0;
     padding: 20px;
     border-radius: 10px;
-    width: 48%;
+    width: 40%; /* Set to 40% to reduce size by 20% */
 }
 
 .nftTitle {
@@ -113,7 +113,7 @@
 }
 
 .nftImage {
-    width: 48%; /* Set to 48% to match the .nftInfo width */
+    width: 40%; /* Set to 40% to match the .nftInfo width */
     height: auto;
     margin-left: 2%;
     border-radius: 10px;
