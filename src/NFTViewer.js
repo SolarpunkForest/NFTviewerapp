@@ -81,14 +81,16 @@ const NFTViewer = () => {
             {error && <p className={styles.error}>{error}</p>}
             {nftData && (
                 <div className={styles.nftCard}>
-                    <div className={styles.nftInfo}>
-                        <h2 className={styles.nftTitle}>{nftData.name}</h2>
-                        <p className={styles.nftDescription}>{nftData.description}</p>
-                        <p>Size in Hectares: {nftData.size}</p>
-                        <p>CO2/Tones per Hectare: {nftData.co2PerHectare}</p>
-                        <p>Total CO2 Token Supply: {totalSupply}</p>
+                    <div className={styles.nftInfoContainer}>
+                        <div className={styles.nftInfo}>
+                            <h2 className={styles.nftTitle}>{nftData.name}</h2>
+                            <p className={styles.nftDescription}>{nftData.description}</p>
+                            <p>Size in Hectares: {nftData.size}</p>
+                            <p>CO2/Tones per Hectare: {nftData.co2PerHectare}</p>
+                            <p>Total CO2 Token Supply: {totalSupply}</p>
+                        </div>
+                        <img src={nftData.image} alt={nftData.name} className={styles.nftImage} />
                     </div>
-                    <img src={nftData.image} alt={nftData.name} className={styles.nftImage} />
                     <div className={styles.nftAdditionalAttributes}>
                         <h3>Asset Underlying Attributes:</h3>
                         <div className={styles.attributeGroup}>
